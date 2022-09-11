@@ -1,0 +1,13 @@
+.card__like {
+    width: 22px;
+    height: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+.card__like:hover {
+    opacity: 0.5;
+}

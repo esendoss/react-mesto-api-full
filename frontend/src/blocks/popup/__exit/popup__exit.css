@@ -1,0 +1,21 @@
+.popup__exit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    position: fixed;
+    margin-top: -40px;
+    margin-left: 438px;
+    cursor: pointer;
+}
+.popup__exit:hover {
+    opacity: 0.6;
+}
+@media screen and (max-width: 620px) {
+    .popup__exit {
+        margin-top: -36px;
+        margin-left: 262px;
+    }
+}

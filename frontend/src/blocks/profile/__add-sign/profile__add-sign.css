@@ -1,0 +1,9 @@
+.profile__add-sign {
+
+}
+@media screen and (max-width: 846px) {
+    .profile__add-sign {
+        width: 16px;
+        height: 16px;
+    }
+}

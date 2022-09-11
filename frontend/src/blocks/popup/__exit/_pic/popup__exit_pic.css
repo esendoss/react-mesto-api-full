@@ -1,0 +1,12 @@
+.popup__exit_pic {
+    position: absolute;
+    margin: 0;
+    top: -40px;
+    right: -40px;
+}
+@media screen and (max-width: 620px) {
+    .popup__exit_pic {
+        top: -36px;
+        right: 0;
+    }
+}

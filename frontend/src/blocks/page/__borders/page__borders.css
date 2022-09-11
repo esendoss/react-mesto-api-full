@@ -1,0 +1,9 @@
+.page__borders {
+    
+}
+@media screen and (max-width: 905px) {
+    .page__borders {
+        padding-left: 19px;
+        padding-right: 19px;
+    }
+}
