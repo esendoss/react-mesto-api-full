@@ -3,6 +3,7 @@ const NotFoundError = require('../errors/NotFoundError');
 const UncorrectError = require('../errors/UncorrectError');
 const DeleteCardError = require('../errors/DeleteCardError');
 const ErrorCode = require('../errorCode/errorCode');
+
 //  возвращает все карточки
 module.exports.getCards = (req, res, next) => {
   Card.find({})
@@ -11,7 +12,6 @@ module.exports.getCards = (req, res, next) => {
 };
 
 // создаёт карточку
-
 module.exports.createCard = (req, res, next) => {
   const { name, link } = req.body;
   Card.create({ name, link, owner: req.user._id })
@@ -26,6 +26,7 @@ module.exports.createCard = (req, res, next) => {
       }
     });
 };
+
 //  удаляет карточку по идентификатору
 module.exports.deleteCard = (req, res, next) => {
   Card.findById(req.params.cardId)

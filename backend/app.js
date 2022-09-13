@@ -1,3 +1,8 @@
+/* eslint-disable no-console */
+require('dotenv').config();
+
+// console.log(process.env.NODE_ENV);
+
 const express = require('express');
 const { errors } = require('celebrate');
 const mongoose = require('mongoose');
