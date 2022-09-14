@@ -1,6 +1,7 @@
 // разрешенные кросс-доменные запросы
 const allowedCors = [
   'https://anotherdomain.esendoss.students.nomoredomains.sbs',
+  'http://anotherdomain.esendoss.students.nomoredomains.sbs',
   'https://esendoss.students.nomoredomains.sbs',
   'http://esendoss.students.nomoredomains.sbs',
   'http://localhost:3010',
