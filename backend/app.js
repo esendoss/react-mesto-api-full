@@ -18,7 +18,7 @@ const userRouter = require('./routes/user');
 const cardRouter = require('./routes/card');
 const wayRouter = require('./routes/wrongway');
 
-const { PORT = 3010 } = process.env;
+const { PORT = 3000 } = process.env;
 
 const app = express();
 
