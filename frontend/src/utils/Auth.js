@@ -1,5 +1,4 @@
-export const BASE_URL = 'https://anotherdomain.esendoss.students.nomoredomains.sbs';
-//export const BASE_URL = 'http://localhost:3010';
+export const BASE_URL = 'http://anotherdomain.esendoss.students.nomoredomains.sbs';
 
 function checkError(res) {
   if (res.ok) {

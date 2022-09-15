@@ -96,8 +96,7 @@ class Api {
 }
 
 const api = new Api({
-  // url: 'http://localhost:3010',
-  url: 'https://anotherdomain.esendoss.students.nomoredomains.sbs',
+  url: 'http://anotherdomain.esendoss.students.nomoredomains.sbs',
   headers: {
     'Content-Type': 'application/json',
   },
