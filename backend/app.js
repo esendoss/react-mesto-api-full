@@ -18,7 +18,7 @@ const userRouter = require('./routes/user');
 const cardRouter = require('./routes/card');
 const wayRouter = require('./routes/wrongway');
 
-const { PORT = 3000 } = process.env;
+const { PORT = 3001 } = process.env;
 
 const app = express();
 
@@ -28,6 +28,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors);
+
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 
 app.post('/signup', validateRegister, createUser);
 app.post('/signin', validateLogin, login);
