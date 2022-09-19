@@ -1,13 +1,11 @@
 /* eslint-disable no-console */
 require('dotenv').config();
 
-// console.log(process.env.NODE_ENV);
-
 const express = require('express');
 const { errors } = require('celebrate');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const cors = require('./middlewares/cors');
+const cors = require('cors');
 
 const { createUser, login } = require('./controllers/user');
 const auth = require('./middlewares/auth');
@@ -22,12 +20,25 @@ const { PORT = 3001 } = process.env;
 
 const app = express();
 
+const options = {
+  origin: [
+    'https://anotherdomain.esendoss.students.nomoredomains.sbs',
+    'http://anotherdomain.esendoss.students.nomoredomains.sbs',
+    'https://esendoss.students.nomoredomains.sbs',
+    'http://esendoss.students.nomoredomains.sbs',
+    'http://localhost:3001',
+    'http://localhost:3000',
+  ],
+  methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+  allowedHeaders: ['Content-Type', 'origin', 'Authorization'],
+};
+
 app.use(requestLogger);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-app.use(cors);
 
 app.get('/crash-test', () => {
   setTimeout(() => {
@@ -40,6 +51,7 @@ app.post('/signin', validateLogin, login);
 
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb', { useNewUrlParser: true });
 
+app.use('*', cors(options));
 app.use(auth);
 
 app.use('/', userRouter);
