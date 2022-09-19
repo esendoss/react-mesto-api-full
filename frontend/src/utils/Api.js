@@ -93,6 +93,12 @@ class Api {
     })
       .then(this._checkError)
   }
+  updateEmail() {
+    this._headers = {
+      'Authorization': `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json',
+    }
+  }
 }
 
 const api = new Api({

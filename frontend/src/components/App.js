@@ -38,6 +38,7 @@ function App(props) {
 
     useEffect(() => {
         if (email) {
+            api.updateEmail();
             Promise.all([api.getUserInfo(), api.getInitialCards()])
                 .then(([profile, cards]) => {
                     setCurrentUser(profile);
